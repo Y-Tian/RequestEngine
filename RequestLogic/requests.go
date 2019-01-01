@@ -1,4 +1,4 @@
-package download
+package RequestLogic
 
 import (
 	"io/ioutil"
@@ -26,7 +26,7 @@ func MakeRequest(s string) []byte {
 }
 
 func WriteToFile(s string, data []byte) error {
-	filePerm := 0644
+	const filePerm = 0644
 	filename := "temp_image_dump.png"
 	return ioutil.WriteFile(filename, data, os.FileMode(filePerm))
 }
